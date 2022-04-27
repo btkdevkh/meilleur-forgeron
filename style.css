@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  font-family: 'Patua One', cursive;
+  background: url('./forged_mobile.jpg') top center / cover;
+}
+
+img {
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 5px;
+}
+
+header nav .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+header nav .logo {
+  width: 300px;
+}
+
+.menu__burger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu__burger span {
+  display: block;
+  height: 3px;
+  width: 30px;
+  background-color: #e47337;
+  margin-bottom: 5px;
+  box-shadow: 2px 2px 3px #0000;
+  border-radius: 3px;
+}
+
+.big__title {
+  min-height: 60vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #4c4c4c;
+  text-shadow: 0px 2px 2px #fff;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.forged {
+  border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+  .menu__burger {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+  }
+  header nav .container {
+    justify-content: space-between;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .forged__in__fires {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
