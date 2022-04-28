@@ -6,11 +6,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  line-height: 1.5;
   min-height: 100vh;
   min-width: 320px;
   font-family: 'Patua One', cursive;
-  background: url('./forged_mobile.jpg') top center / cover;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -23,6 +33,12 @@ iframe {
   border-radius: 5px;
 }
 
+header {
+  height: 400px;
+  background: url('./img/forged_mobile.jpg') top center / cover no-repeat;
+  background-attachment: fixed;
+}
+
 header nav .container {
   position: relative;
   display: flex;
@@ -33,6 +49,36 @@ header nav .logo {
   width: 300px;
 }
 
+header .nav__menu {
+  display: none;
+  height: 30vh;
+  position: absolute;
+  gap: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 25px;
+  list-style: none;
+  background-color: rgba(0,0,0,0.8);
+  transition: 0.3s;
+}
+
+header .nav__menu.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+header .nav__menu li {
+  font-size: 1.5rem;
+  color: white;
+  padding: 15px 25px;
+  background-color: #4c4c4c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .menu__burger {
   position: absolute;
   top: 10px;
@@ -41,18 +87,22 @@ header nav .logo {
   cursor: pointer;
 }
 
+.menu__burger.active {
+  position: fixed;
+}
+
 .menu__burger span {
   display: block;
   height: 3px;
   width: 30px;
-  background-color: #e47337;
+  background-color: #fff;
   margin-bottom: 5px;
-  box-shadow: 2px 2px 3px #0000;
+  box-shadow: 0 2px 2px black;
   border-radius: 3px;
 }
 
 .big__title {
-  min-height: 60vh;
+  margin-bottom: 45px;
 }
 
 h1 {
@@ -68,18 +118,96 @@ h1 {
   padding: 0 5px;
 }
 
+.forged__in__fires {
+  margin-bottom: 25px;
+  padding: 25px 0;
+}
+
 .forged {
   border-radius: 10px;
 }
 
+#judges {
+  color: white;
+  margin-bottom: 25px;
+}
+
+#judges h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.judges_grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5px;
+}
+
+.judge__description h4 {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.judge__description {
+  padding: 25px;
+  background-color: #cf4b03;
+  background-color: rgba(207, 75, 3, 0.6);
+  border-radius: 5px;
+}
+
+.judge__description img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.judge__description p {
+  text-align: justify;
+}
+
+#about {
+  color: white;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#about p {
+  text-align: center;
+}
+
 @media (min-width: 600px) {
-  .menu__burger {
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    color: white;
-    cursor: pointer;
+  header {
+    height: 500px;
   }
+  header .nav__menu {
+    height: unset;
+    margin-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: unset;
+    padding: 0;
+  }
+  header .nav__menu li {
+    padding: 5px 10px;
+    background-color: unset;
+  }
+  header .nav__menu li a {
+    text-transform: uppercase;
+    color: #4c4c4c;
+    text-shadow: 1px 1px 1px #fff;
+  }
+  .menu__burger {
+    display: none;
+  }  
   header nav .container {
     justify-content: space-between;
   }
@@ -91,5 +219,16 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
+  .judges_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (min-width: 1024px) {
+  header {
+    height: 600px;
+  }
+  .judges_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
