@@ -51,9 +51,10 @@ header nav .logo {
 
 header .nav__menu {
   display: none;
+  min-width: 320px;
   height: 30vh;
   position: absolute;
-  gap: 15px;
+  gap: 10px;
   top: 0;
   left: 0;
   right: 0;
@@ -71,18 +72,24 @@ header .nav__menu.active {
 }
 
 header .nav__menu li {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
-  padding: 15px 25px;
+  padding: 10px 15px;
   background-color: #4c4c4c;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+header .nav__menu li:hover {
+  background-color: #cf4b03;
 }
 
 .menu__burger {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   cursor: pointer;
 }
@@ -95,7 +102,7 @@ header .nav__menu li {
   display: block;
   height: 3px;
   width: 30px;
-  background-color: #fff;
+  background-color: #cf4b03;
   margin-bottom: 5px;
   box-shadow: 0 2px 2px black;
   border-radius: 3px;
@@ -210,6 +217,10 @@ h1 {
   }  
   header nav .container {
     justify-content: space-between;
+  }
+  header .nav__menu.active {
+    position: relative;
+    top: -20px;
   }
   h1 {
     font-size: 4rem;
